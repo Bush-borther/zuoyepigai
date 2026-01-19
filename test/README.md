@@ -11,6 +11,22 @@
 
 An intelligent exam grading system that uses OCR and LLM to automatically grade handwritten test papers and generate marked PDFs.
 
+> **⚠️ Disclaimer / 免责声明**
+> 
+> This is an experimental project with known limitations. The grading accuracy depends heavily on:
+> - OCR quality and handwriting clarity
+> - LLM's understanding of the content
+> - Question number detection accuracy
+> 
+> **本项目为实验性质，存在已知局限性。判题准确性高度依赖于：**
+> - **OCR 质量和手写清晰度**
+> - **大语言模型对内容的理解**
+> - **题号检测的准确性**
+> 
+> **The author has limited technical expertise and welcomes contributions from the community to improve this project. Feel free to fork, modify, and enhance it!**
+> 
+> **作者技术有限，欢迎社区贡献者改进本项目。欢迎 Fork、修改和增强！**
+
 ### Features
 
 - 📝 **OCR Recognition**: Extracts text from scanned exam papers using PaddleOCR
@@ -139,6 +155,51 @@ LLM_MODEL=gpt-4o
 5. **Marking**: Draws ✓ or ✗ marks on the image
 6. **PDF**: Generates a downloadable PDF with marks
 
+### Known Issues & Limitations
+
+⚠️ **Current Limitations:**
+
+1. **Question Detection**
+   - May fail if question numbers are unclear or in non-standard format
+   - Assumes sequential numbering (1, 2, 3...)
+   - May confuse scores or page numbers with question numbers
+
+2. **Grading Accuracy**
+   - Depends on LLM's understanding and prompt quality
+   - May produce false positives/negatives
+   - Works best with clear handwriting
+
+3. **Layout Requirements**
+   - Assumes vertical layout with questions from top to bottom
+   - May not work well with multi-column layouts
+   - Requires visible question numbers
+
+### Improvement Opportunities
+
+🚀 **Areas for Enhancement:**
+
+1. **Better Question Detection**
+   - Use computer vision to detect answer boxes
+   - Support template-based detection
+   - Handle various exam formats
+
+2. **Improved Grading Logic**
+   - Add standard answer database
+   - Implement fuzzy matching for text answers
+   - Support multiple grading strategies
+
+3. **Enhanced UI/UX**
+   - Batch upload support
+   - Manual correction interface
+   - Statistics and analytics dashboard
+
+4. **Performance**
+   - Async processing for large batches
+   - Image optimization
+   - Caching mechanisms
+
+**Contributions are highly welcome! If you have ideas or improvements, please submit a Pull Request.**
+
 ### License
 
 MIT
@@ -150,6 +211,22 @@ MIT
 ### 概述
 
 一个智能试卷批改系统，使用 OCR 和大语言模型自动批改手写试卷并生成标注 PDF。
+
+> **⚠️ 免责声明 / Disclaimer**
+> 
+> **本项目为实验性质，存在已知局限性。判题准确性高度依赖于：**
+> - **OCR 质量和手写清晰度**
+> - **大语言模型对内容的理解**
+> - **题号检测的准确性**
+> 
+> This is an experimental project with known limitations. The grading accuracy depends heavily on:
+> - OCR quality and handwriting clarity
+> - LLM's understanding of the content
+> - Question number detection accuracy
+> 
+> **作者技术有限，欢迎社区贡献者改进本项目。欢迎 Fork、修改和增强！**
+> 
+> **The author has limited technical expertise and welcomes contributions from the community to improve this project. Feel free to fork, modify, and enhance it!**
 
 ### 功能特性
 
@@ -278,6 +355,51 @@ LLM_MODEL=gpt-4o
 4. **判题**：每个区域发送给 LLM 进行判题
 5. **标注**：在图片上绘制 ✓ 或 ✗ 标记
 6. **PDF**：生成可下载的带标记 PDF
+
+### 已知问题和局限性
+
+⚠️ **当前局限性：**
+
+1. **题号检测**
+   - 如果题号不清晰或格式非标准可能失败
+   - 假设题号是连续的（1、2、3...）
+   - 可能将分数或页码误认为题号
+
+2. **判题准确性**
+   - 依赖于 LLM 的理解能力和提示词质量
+   - 可能产生误判
+   - 对清晰的手写效果最好
+
+3. **布局要求**
+   - 假设题目从上到下垂直排列
+   - 可能不适用于多栏布局
+   - 需要可见的题号
+
+### 改进机会
+
+🚀 **可改进方向：**
+
+1. **更好的题目检测**
+   - 使用计算机视觉检测答题框
+   - 支持基于模板的检测
+   - 处理各种试卷格式
+
+2. **改进判题逻辑**
+   - 添加标准答案库
+   - 实现文本答案的模糊匹配
+   - 支持多种判题策略
+
+3. **增强 UI/UX**
+   - 批量上传支持
+   - 手动修正界面
+   - 统计分析仪表板
+
+4. **性能优化**
+   - 大批量异步处理
+   - 图片优化
+   - 缓存机制
+
+**非常欢迎贡献！如果您有想法或改进，请提交 Pull Request。**
 
 ### 许可证
 
